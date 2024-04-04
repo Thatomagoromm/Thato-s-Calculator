@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thato's Calculator</title>
+<style>
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        position: relative;
+        overflow: hidden;
+    }
+    h2 {
+        text-align: center;
+        margin-top: 0;
+        position: absolute;
+        top: -50px; /* Initial position */
+        left: -100%; /* Start from outside the container */
+        animation: slideIn 1s forwards; /* Animation duration: 1 second */
+    }
+    @keyframes slideIn {
+        to {
+            left: 0; /* End position */
+            top: 0; /* End position */
+        }
+    }
+    #display {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 18px;
+    }
+    button {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        margin: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Thato's Calculator</h2>
+        <form name="calculator">
+            <input type="text" name="display" id="display" readonly>
+            <br>
+            <button type="button" onclick="calculator.display.value += '1'">1</button>
+            <button type="button" onclick="calculator.display.value += '2'">2</button>
+            <button type="button" onclick="calculator.display.value += '3'">3</button>
+            <button type="button" onclick="calculator.display.value += '+'">+</button>
+            <br>
+            <button type="button" onclick="calculator.display.value += '4'">4</button>
+            <button type="button" onclick="calculator.display.value += '5'">5</button>
+            <button type="button" onclick="calculator.display.value += '6'">6</button>
+            <button type="button" onclick="calculator.display.value += '-'">-</button>
+            <br>
+            <button type="button" onclick="calculator.display.value += '7'">7</button>
+            <button type="button" onclick="calculator.display.value += '8'">8</button>
+            <button type="button" onclick="calculator.display.value += '9'">9</button>
+            <button type="button" onclick="calculator.display.value += '*'">*</button>
+            <br>
+            <button type="button" onclick="calculator.display.value += '0'">0</button>
+            <button type="button" onclick="calculator.display.value += '.'">.</button>
+            <button type="button" onclick="calculator.display.value = eval(calculator.display.value)">=</button>
+            <button type="button" onclick="calculator.display.value = ''">C</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
